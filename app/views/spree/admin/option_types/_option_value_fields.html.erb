@@ -5,8 +5,8 @@
   </td>
   <td class="name"><%= f.text_field :name, class: "form-control" %></td>
   <td class="presentation"><%= f.text_field :presentation, class: "form-control" %></td>
-  <td align="center">
-  <% if f.object.has_image? %>
+  <td class="preview" align="center">
+  <% if f.object.has_image? and f.object.id %>
     <%= image_tag f.object.image.url(:small) %>
     <%= link_to_with_icon 'delete', '', detach_image_admin_option_value_path(f.object), title: Spree.t(:detach_image) %>
   <% end %>
